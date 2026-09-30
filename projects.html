@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Aadhilshah S - Portfolio</title>
+  <meta name="description" content="Featured software engineering and machine learning projects by Aadhilshah S, including the BuildEasy AI Construction Platform." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080d1a',
+              card: '#0f172a',
+              border: '#1e293b',
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+            }
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-[#080d1a] text-gray-100 flex flex-col min-h-screen selection:bg-cyan-500 selection:text-black">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#080d1a]/80 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-500 flex items-center justify-center font-heading font-black text-slate-950 text-xl shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          A
+        </div>
+        <div>
+          <span class="font-heading font-bold text-lg tracking-tight group-hover:text-cyan-400 transition-colors">AADHILSHAH S</span>
+          <div class="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-online"></span>
+            Available for Roles
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800">
+        <a href="index.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 hover:text-cyan-400">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 transition-opacity"></span>
+          Home
+        </a>
+        <a href="about.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 hover:text-cyan-400">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 transition-opacity"></span>
+          About Me
+        </a>
+        <a href="projects.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 hover:text-cyan-400">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 transition-opacity"></span>
+          Projects
+        </a>
+        <a href="contact.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 hover:text-cyan-400">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 transition-opacity"></span>
+          Contact
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden lg:flex items-center gap-3">
+        <button onclick="copyToClipboard('aadhilshah.s@gmail.com', 'Email copied to clipboard!')" class="px-3.5 py-2 text-xs font-mono rounded-lg border border-slate-700 bg-slate-900/80 hover:border-cyan-500/50 hover:text-cyan-300 transition flex items-center gap-2">
+          <i data-lucide="copy" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Copy Email</span>
+        </button>
+        <a href="contact.html" class="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 hover:shadow-lg hover:shadow-cyan-500/25 transition">
+          Hire Me
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl border border-slate-800 bg-slate-900 text-gray-300 hover:text-white">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 bg-[#080d1a] border-b border-slate-800 space-y-2">
+      <a href="index.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-900 text-gray-300">Home</a>
+      <a href="about.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-900 text-gray-300">About Me</a>
+      <a href="projects.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-900 text-cyan-400 font-semibold">Projects</a>
+      <a href="contact.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-900 text-gray-300">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="flex-grow py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Page Header -->
+      <div class="max-w-3xl mb-12">
+        <div class="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span>Portfolio Showcase</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-heading font-black text-white">Featured Projects</h1>
+        <p class="text-base sm:text-lg text-gray-300 mt-4 leading-relaxed">
+          Applied engineering solutions combining Machine Learning intelligence, responsive web interfaces, and production-ready APIs.
+        </p>
+      </div>
+
+      <!-- ================= FLAGSHIP PROJECT: BUILDEASY ================= -->
+      <div class="glass-panel rounded-3xl border border-cyan-500/40 p-6 sm:p-10 mb-16 relative overflow-hidden">
+        
+        <!-- Top Metadata & Role Badge -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 flex items-center gap-1.5">
+              <i data-lucide="award" class="w-3.5 h-3.5 text-cyan-400"></i>
+              Flagship Project
+            </span>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-950/80 border border-emerald-500/40 text-emerald-300">
+              Project Lead & Developer
+            </span>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-900 border border-slate-700 text-gray-400">
+              Jan 2026 – Jun 2026
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button onclick="copyToClipboard('https://github.com', 'GitHub link copied!')" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-xs font-mono text-gray-300 hover:text-white hover:border-slate-500 transition flex items-center gap-1.5">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              <span>Source Code</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Title & Problem-Solution Statement -->
+        <div class="max-w-4xl mb-8">
+          <h2 class="text-2xl sm:text-4xl font-heading font-black text-white tracking-tight">
+            BuildEasy – AI-Powered Construction Supply Chain Platform
+          </h2>
+          <p class="text-sm sm:text-base text-gray-300 mt-4 leading-relaxed">
+            Designed and developed an AI-driven construction management ecosystem that automates material estimation, supplier management, order processing, and delivery tracking. By pairing <strong class="text-cyan-400">TensorFlow</strong> neural networks for structural material calculations with <strong class="text-emerald-400">Node.js/MongoDB</strong> and <strong class="text-white">Google Maps API</strong>, the platform drastically cuts manual estimation delays and supplier mismatch bottlenecks.
+          </p>
+        </div>
+
+        <!-- Tech Stack Badges Grid -->
+        <div class="mb-10 p-4 bg-slate-950/60 rounded-2xl border border-slate-800">
+          <div class="text-[11px] font-mono text-gray-400 uppercase tracking-wider mb-2.5">Technologies & Tools Deployed:</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-cyan-950/40 border border-cyan-500/30 text-cyan-300">Node.js</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-cyan-950/40 border border-cyan-500/30 text-cyan-300">Express.js</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-emerald-950/40 border border-emerald-500/30 text-emerald-300">MongoDB & Compass</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-emerald-950/40 border border-emerald-500/30 text-emerald-300">TensorFlow & TF.js</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-purple-950/40 border border-purple-500/30 text-purple-300">MobileNetV2</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-purple-950/40 border border-purple-500/30 text-purple-300">NumPy & Pillow</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-amber-950/40 border border-amber-500/30 text-amber-300">Google Maps API</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">HTML5 / CSS3 / JS</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">Bootstrap</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">Postman</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">Git / GitHub</span>
+          </div>
+        </div>
+
+        <!-- ================= INTERACTIVE WORKBENCH ================= -->
+        <div class="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+          
+          <!-- Workbench Tab Bar -->
+          <div class="flex border-b border-slate-800 bg-slate-900/60 overflow-x-auto">
+            <button class="project-tab active px-5 py-3 text-xs sm:text-sm font-heading font-bold border-b-2 border-cyan-400 text-cyan-400 flex items-center gap-2 whitespace-nowrap" data-target="tab-estimator">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
+              <span>1. Live AI Material Estimator</span>
+            </button>
+            <button class="project-tab px-5 py-3 text-xs sm:text-sm font-heading font-medium text-gray-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 whitespace-nowrap" data-target="tab-dispatcher">
+              <i data-lucide="truck" class="w-4 h-4"></i>
+              <span>2. Supply Chain Dispatch Simulator</span>
+            </button>
+            <button class="project-tab px-5 py-3 text-xs sm:text-sm font-heading font-medium text-gray-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 whitespace-nowrap" data-target="tab-architecture">
+              <i data-lucide="git-branch" class="w-4 h-4"></i>
+              <span>3. Full System Architecture</span>
+            </button>
+          </div>
+
+          <!-- TAB 1: AI MATERIAL ESTIMATOR -->
+          <div id="tab-estimator" class="project-panel p-6 sm:p-8">
+            <div class="flex flex-col lg:flex-row gap-8 items-start">
+              
+              <!-- Input Controls Form -->
+              <div class="w-full lg:w-5/12 space-y-5 bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
+                <div class="flex items-center justify-between">
+                  <div class="text-xs font-mono text-cyan-400 font-semibold uppercase">Simulation Parameters</div>
+                  <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded">Real-time Inference</span>
+                </div>
+
+                <!-- Built-up Area Slider -->
+                <div>
+                  <div class="flex items-center justify-between text-xs mb-1.5">
+                    <label for="calc-area" class="text-gray-300 font-medium">Built-up Area (Sq. Ft):</label>
+                    <div class="flex items-center gap-1">
+                      <input type="number" id="calc-area" value="2400" min="500" max="20000" step="100" class="w-20 px-2 py-1 bg-slate-950 border border-slate-700 rounded text-right text-xs font-mono text-cyan-300 focus:outline-none focus:border-cyan-400" />
+                      <span class="text-gray-400 font-mono text-xs">sq ft</span>
+                    </div>
+                  </div>
+                  <input type="range" id="calc-area-slider" min="500" max="15000" step="100" value="2400" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-400" />
+                  <div class="flex justify-between text-[10px] text-gray-500 font-mono mt-1">
+                    <span>500 sq ft</span>
+                    <span>7,500 sq ft</span>
+                    <span>15,000 sq ft</span>
+                  </div>
+                </div>
+
+                <!-- Construction Type -->
+                <div>
+                  <label for="calc-type" class="block text-xs text-gray-300 font-medium mb-1.5">Structural Category:</label>
+                  <select id="calc-type" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-cyan-400">
+                    <option value="residential">Residential Villa / Independent House (G+1)</option>
+                    <option value="commercial">Commercial Office Space (Multi-storey)</option>
+                    <option value="industrial">Industrial Warehouse / Pre-engineered</option>
+                  </select>
+                </div>
+
+                <!-- Model Choice -->
+                <div>
+                  <label for="calc-model" class="block text-xs text-gray-300 font-medium mb-1.5">Inference Model Pipeline:</label>
+                  <select id="calc-model" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-cyan-400">
+                    <option value="mobilenet">MobileNetV2 (Edge Quantized • 34ms)</option>
+                    <option value="resnet">Deep Structural CNN (Server GPU • 118ms)</option>
+                  </select>
+                </div>
+
+                <div class="text-[11px] font-mono text-gray-400 bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                  <span class="text-cyan-400">Note for Recruiters:</span> This interactive widget executes the mathematical model and estimation weights developed for the BuildEasy platform.
+                </div>
+              </div>
+
+              <!-- Output Results Display -->
+              <div class="w-full lg:w-7/12">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                  
+                  <!-- Metric 1: Cement -->
+                  <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                    <div class="text-[11px] font-mono text-gray-400">Cement Required</div>
+                    <div class="text-xl sm:text-2xl font-heading font-extrabold text-white mt-1">
+                      <span id="res-cement">1,008</span> <span class="text-xs font-mono text-cyan-400">Bags</span>
+                    </div>
+                    <div class="text-[10px] text-gray-500 mt-1">Grade 53 OPC / PPC Standard</div>
+                  </div>
+
+                  <!-- Metric 2: Steel -->
+                  <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                    <div class="text-[11px] font-mono text-gray-400">Structural Steel</div>
+                    <div class="text-xl sm:text-2xl font-heading font-extrabold text-white mt-1">
+                      <span id="res-steel">9.12</span> <span class="text-xs font-mono text-emerald-400">Tons</span>
+                    </div>
+                    <div class="text-[10px] text-gray-500 mt-1">Fe500D TMT Reinforcement</div>
+                  </div>
+
+                  <!-- Metric 3: Aggregates -->
+                  <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                    <div class="text-[11px] font-mono text-gray-400">Sand & Aggregates</div>
+                    <div class="text-xl sm:text-2xl font-heading font-extrabold text-white mt-1">
+                      <span id="res-sand">3,960</span> <span class="text-xs font-mono text-amber-400">Cu. Ft</span>
+                    </div>
+                    <div class="text-[10px] text-gray-500 mt-1">M-Sand & 20mm Coarse</div>
+                  </div>
+
+                </div>
+
+                <!-- Estimated Cost & AI Performance Row -->
+                <div class="p-5 bg-gradient-to-r from-slate-900 via-slate-900 to-cyan-950/40 rounded-xl border border-cyan-500/20 mb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                      <div class="text-xs font-mono text-cyan-400">AI Estimated Base Material Budget:</div>
+                      <div class="text-3xl font-heading font-black text-white mt-1" id="res-cost">₹50.40 Lakhs</div>
+                      <div class="text-[11px] text-gray-400 mt-0.5">Calculated using regional Kerala/India market indices</div>
+                    </div>
+                    <div class="sm:text-right">
+                      <div class="text-xs font-mono text-emerald-400">Waste Reduction Achieved:</div>
+                      <div class="text-2xl font-heading font-bold text-emerald-300 mt-1" id="res-savings">12.6%</div>
+                      <div class="text-[11px] text-gray-400 mt-0.5">Vs. manual contractor estimates</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Model Stats Bar -->
+                <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                  <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800 flex items-center justify-between">
+                    <span class="text-gray-400">Inference Confidence:</span>
+                    <span class="text-emerald-400 font-bold" id="res-confidence">96.4%</span>
+                  </div>
+                  <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800 flex items-center justify-between">
+                    <span class="text-gray-400">Model Latency:</span>
+                    <span class="text-cyan-300 font-bold" id="res-latency">34 ms (Edge)</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <!-- TAB 2: SUPPLY CHAIN DISPATCH SIMULATOR -->
+          <div id="tab-dispatcher" class="project-panel hidden p-6 sm:p-8">
+            <div class="max-w-3xl mb-6">
+              <h3 class="text-lg font-heading font-bold text-white">Automated Supplier Allocation & Dispatch Lifecycle</h3>
+              <p class="text-xs sm:text-sm text-gray-400 mt-1">
+                Simulate how BuildEasy receives an order, determines material inventory, matches the closest verified vendor via Google Maps API, and routes the shipment.
+              </p>
+            </div>
+
+            <!-- Progress Tracker -->
+            <div class="relative mb-8 pt-4">
+              <!-- Bar Background -->
+              <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                <div id="dispatch-progress-bar" class="h-full bg-gradient-to-r from-cyan-500 to-emerald-500 w-0 transition-all duration-700 ease-out"></div>
+              </div>
+
+              <!-- 4 Step Pins -->
+              <div class="flex justify-between -mt-4">
+                <div class="dispatch-pin w-8 h-8 rounded-full bg-slate-800 border-2 border-slate-700 text-gray-400 text-xs font-mono font-bold flex items-center justify-center transition-all">1</div>
+                <div class="dispatch-pin w-8 h-8 rounded-full bg-slate-800 border-2 border-slate-700 text-gray-400 text-xs font-mono font-bold flex items-center justify-center transition-all">2</div>
+                <div class="dispatch-pin w-8 h-8 rounded-full bg-slate-800 border-2 border-slate-700 text-gray-400 text-xs font-mono font-bold flex items-center justify-center transition-all">3</div>
+                <div class="dispatch-pin w-8 h-8 rounded-full bg-slate-800 border-2 border-slate-700 text-gray-400 text-xs font-mono font-bold flex items-center justify-center transition-all">4</div>
+              </div>
+
+              <div class="flex justify-between text-[11px] font-mono text-gray-400 mt-2 px-1">
+                <span>1. Order Placed</span>
+                <span>2. AI Estimation</span>
+                <span>3. Vendor Match</span>
+                <span>4. Route Dispatch</span>
+              </div>
+            </div>
+
+            <!-- Action & Live Event Log -->
+            <div class="bg-slate-900/90 rounded-2xl p-5 border border-slate-800">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-3 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 pulse-online"></span>
+                  <span class="text-xs font-mono font-semibold text-white">Event Telemetry Console</span>
+                </div>
+                <button id="simulate-dispatch-btn" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 hover:brightness-110 transition flex items-center gap-2">
+                  <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                  <span>Simulate Order & Dispatch</span>
+                </button>
+              </div>
+
+              <div id="dispatch-status-log" class="h-36 overflow-y-auto space-y-2 pr-2 text-xs font-mono">
+                <div class="text-gray-500 italic">Click "Simulate Order & Dispatch" above to trigger real-time workflow telemetry...</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: SYSTEM ARCHITECTURE & DATA FLOW -->
+          <div id="tab-architecture" class="project-panel hidden p-6 sm:p-8">
+            <div class="max-w-3xl mb-8">
+              <h3 class="text-lg font-heading font-bold text-white">High-Level System & Cloud Architecture</h3>
+              <p class="text-xs sm:text-sm text-gray-400 mt-1">
+                Architectural breakdown of how client requests flow through Express middleware, call Python/TensorFlow inference services, and persist in MongoDB.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              
+              <!-- Layer 1 -->
+              <div class="p-5 bg-slate-900/80 rounded-2xl border border-cyan-500/20 space-y-3">
+                <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono text-xs font-bold">01</div>
+                <h4 class="font-heading font-bold text-white text-sm">Client Presentation</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  Responsive UI built with HTML5, CSS3, JavaScript, and Bootstrap. Features blueprint image upload, project input forms, and dynamic telemetry dashboards.
+                </p>
+                <div class="text-[10px] font-mono text-cyan-400">Stack: HTML5 / CSS3 / JS / Bootstrap</div>
+              </div>
+
+              <!-- Layer 2 -->
+              <div class="p-5 bg-slate-900/80 rounded-2xl border border-emerald-500/20 space-y-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-mono text-xs font-bold">02</div>
+                <h4 class="font-heading font-bold text-white text-sm">API Gateway & Logic</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  Node.js & Express.js RESTful API service handling authentication, order processing, vendor catalog lookup, and orchestration between services.
+                </p>
+                <div class="text-[10px] font-mono text-emerald-400">Stack: Node.js / Express.js / Postman</div>
+              </div>
+
+              <!-- Layer 3 -->
+              <div class="p-5 bg-slate-900/80 rounded-2xl border border-purple-500/20 space-y-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-mono text-xs font-bold">03</div>
+                <h4 class="font-heading font-bold text-white text-sm">AI Inference Engine</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  Python service utilizing TensorFlow and MobileNetV2 for feature extraction and structural material coefficient estimation from input parameters and images.
+                </p>
+                <div class="text-[10px] font-mono text-purple-400">Stack: TensorFlow / MobileNetV2 / NumPy</div>
+              </div>
+
+              <!-- Layer 4 -->
+              <div class="p-5 bg-slate-900/80 rounded-2xl border border-amber-500/20 space-y-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-mono text-xs font-bold">04</div>
+                <h4 class="font-heading font-bold text-white text-sm">Storage & Geospatial</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  MongoDB database for orders, bills of materials, and vendor records. Google Maps API calculates dynamic travel matrices to assign nearest suppliers.
+                </p>
+                <div class="text-[10px] font-mono text-amber-400">Stack: MongoDB / Google Maps API</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= PROJECT 2: CORIZO MACHINE LEARNING PROJECT ================= -->
+      <div class="glass-panel rounded-3xl border border-slate-800 p-6 sm:p-8 mb-16">
+        <div class="flex flex-col lg:flex-row items-start justify-between gap-6">
+          <div class="max-w-2xl space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-purple-950/60 border border-purple-500/30 text-purple-400">Machine Learning Project</span>
+              <span class="text-xs text-gray-400 font-mono">Corizo Research Capstone</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-heading font-bold text-white">
+              Supervised Machine Learning Predictive Classifier
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+              Implemented an end-to-end data processing and classification pipeline in Python. Performed Exploratory Data Analysis (EDA), missing value imputation, feature scaling, model selection, hyperparameter tuning, and ROC-AUC performance evaluation.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-900 text-gray-300 border border-slate-800">Python</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-900 text-gray-300 border border-slate-800">NumPy</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-900 text-gray-300 border border-slate-800">Pandas</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-900 text-gray-300 border border-slate-800">Scikit-Learn</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-900 text-gray-300 border border-slate-800">Jupyter Notebook</span>
+            </div>
+          </div>
+
+          <div class="shrink-0 flex flex-col gap-2 w-full lg:w-auto">
+            <button onclick="copyToClipboard('https://github.com', 'GitHub link copied!')" class="px-4 py-2.5 rounded-xl border border-slate-700 bg-slate-900 text-xs font-semibold text-gray-200 hover:text-cyan-400 hover:border-cyan-500/50 transition flex items-center justify-center gap-2">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>View Repository</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= BOTTOM CALL TO ACTION ================= -->
+      <div class="text-center p-10 glass-panel rounded-3xl border border-cyan-500/30">
+        <h3 class="text-2xl font-heading font-bold text-white mb-3">Impressed with the engineering depth?</h3>
+        <p class="text-sm text-gray-300 max-w-xl mx-auto mb-6">
+          I am eager to contribute my full-stack engineering, Machine Learning skills, and leadership drive to your team.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="contact.html" class="px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 hover:brightness-110 transition flex items-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Contact Me (Netlify Connected)</span>
+          </a>
+          <button onclick="openWhatsApp()" class="px-5 py-3.5 rounded-xl font-semibold text-sm border border-emerald-500/40 bg-emerald-950/30 text-emerald-300 hover:bg-emerald-900/40 transition flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Chat on WhatsApp</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 py-10 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <div class="font-heading font-bold text-lg text-white">AADHILSHAH S</div>
+        <p class="text-xs text-gray-400 mt-1">Computer Science & Engineering | ACE College of Engineering</p>
+      </div>
+
+      <div class="flex items-center gap-5 text-gray-400">
+        <a href="mailto:aadhilshah.s@gmail.com" class="hover:text-cyan-400 transition">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+        </a>
+        <a href="tel:9633843324" class="hover:text-emerald-400 transition">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+        </a>
+        <button onclick="openWhatsApp()" class="hover:text-emerald-400 transition">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="text-xs text-gray-500 font-mono">
+        © <span id="current-year"></span> Aadhilshah S. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/simulator.js"></script>
+</body>
+</html>

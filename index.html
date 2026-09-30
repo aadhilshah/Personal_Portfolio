@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aadhilshah S | Computer Science Engineer & ML Developer</title>
+  <meta name="description" content="Portfolio of Aadhilshah S - Final Year Computer Science Engineer specializing in Python, Machine Learning, and Full-Stack Development. Project Lead of BuildEasy." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080d1a',
+              card: '#0f172a',
+              border: '#1e293b',
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+            }
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-[#080d1a] text-gray-100 flex flex-col min-h-screen selection:bg-cyan-500 selection:text-black">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#080d1a]/80 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-500 flex items-center justify-center font-heading font-black text-slate-950 text-xl shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          A
+        </div>
+        <div>
+          <span class="font-heading font-bold text-lg tracking-tight group-hover:text-cyan-400 transition-colors">AADHILSHAH S</span>
+          <div class="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-online"></span>
+            Available for Roles
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800">
+        <a href="index.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 hover:text-cyan-400">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 transition-opacity"></span>
+          Home
+        </a>
+        <a href="about.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 hover:text-cyan-400">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 transition-opacity"></span>
+          About Me
+        </a>
+        <a href="projects.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 hover:text-cyan-400">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 transition-opacity"></span>
+          Projects
+        </a>
+        <a href="contact.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 hover:text-cyan-400">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 transition-opacity"></span>
+          Contact
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden lg:flex items-center gap-3">
+        <button onclick="copyToClipboard('aadhilshah.s@gmail.com', 'Email copied to clipboard!')" class="px-3.5 py-2 text-xs font-mono rounded-lg border border-slate-700 bg-slate-900/80 hover:border-cyan-500/50 hover:text-cyan-300 transition flex items-center gap-2" title="Click to copy email">
+          <i data-lucide="copy" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Copy Email</span>
+        </button>
+        <a href="contact.html" class="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 hover:shadow-lg hover:shadow-cyan-500/25 hover:brightness-110 transition flex items-center gap-1.5">
+          <span>Hire Me</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl border border-slate-800 bg-slate-900 text-gray-300 hover:text-white" aria-label="Toggle menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 bg-[#080d1a] border-b border-slate-800 space-y-2">
+      <a href="index.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-900 text-gray-300 hover:text-cyan-400">Home</a>
+      <a href="about.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-900 text-gray-300 hover:text-cyan-400">About Me</a>
+      <a href="projects.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-900 text-gray-300 hover:text-cyan-400">Projects</a>
+      <a href="contact.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-900 text-gray-300 hover:text-cyan-400">Contact Me</a>
+      <div class="pt-3 flex flex-col gap-2">
+        <button onclick="openWhatsApp()" class="w-full py-2.5 text-xs font-semibold rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center gap-2">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          <span>Direct WhatsApp (+91 9633843324)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="flex-grow">
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
+      <!-- Background Ambient Glows -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-600/15 to-emerald-600/15 blur-[120px] rounded-full pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="max-w-3xl mx-auto text-center">
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/30 text-emerald-400 text-xs font-mono font-medium mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-online"></span>
+            <span>Final Year CS Student | Open to 2026/2027 Roles & Internships</span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="text-4xl sm:text-6xl font-heading font-black tracking-tight leading-none mb-6">
+            Hi, I'm <span class="text-gradient">Aadhilshah S</span>
+          </h1>
+
+          <!-- Dynamic Typing Line -->
+          <div class="text-lg sm:text-2xl font-mono text-gray-300 h-9 flex items-center justify-center gap-1 mb-8">
+            <span class="text-gray-400 font-light">I am a</span>
+            <span id="typing-text" class="text-cyan-400 font-bold"></span>
+            <span class="typed-cursor text-cyan-400 font-bold">|</span>
+          </div>
+
+          <!-- Concise Value Statement -->
+          <p class="text-base sm:text-lg text-gray-300 leading-relaxed font-normal mb-10 max-w-2xl mx-auto">
+            B.Tech Computer Science student at <strong class="text-white">ACE College of Engineering</strong> with a focus on 
+            <strong class="text-cyan-400">Python, Machine Learning</strong>, and <strong class="text-emerald-400">Full-Stack Development</strong>. 
+            Proven leadership as <strong class="text-white">CSE Placement Coordinator</strong> and <strong class="text-white">Handball Team Captain</strong>.
+          </p>
+
+          <!-- Recruiter CTAs -->
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <a href="projects.html" class="px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] transition flex items-center gap-2">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>Explore Projects & AI Simulator</span>
+            </a>
+
+            <button onclick="openWhatsApp()" class="px-5 py-3.5 rounded-xl font-semibold text-sm border border-emerald-500/40 bg-emerald-950/30 text-emerald-300 hover:bg-emerald-900/40 hover:border-emerald-400 transition flex items-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+              <span>Instant WhatsApp Chat</span>
+            </button>
+
+            <a href="about.html" class="px-5 py-3.5 rounded-xl font-semibold text-sm border border-slate-700 bg-slate-900/80 text-gray-300 hover:border-slate-500 hover:text-white transition flex items-center gap-2">
+              <i data-lucide="user-check" class="w-4 h-4 text-cyan-400"></i>
+              <span>About Me & Leadership</span>
+            </a>
+          </div>
+
+          <!-- Quick Contact Pill Bar -->
+          <div class="mt-8 pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400 font-mono">
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i> Trivandrum, India
+            </span>
+            <button onclick="copyToClipboard('9633843324', 'Phone copied: 9633843324')" class="flex items-center gap-1.5 hover:text-cyan-400 transition">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i> +91 9633843324
+            </button>
+            <button onclick="copyToClipboard('aadhilshah.s@gmail.com', 'Email copied!')" class="flex items-center gap-1.5 hover:text-cyan-400 transition">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-cyan-400"></i> aadhilshah.s@gmail.com
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RECRUITER 30-SEC TL;DR MATRIX -->
+    <section class="py-12 bg-slate-950/60 border-y border-slate-800/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8">
+          <div>
+            <div class="text-xs font-mono text-cyan-400 tracking-wider uppercase mb-1">⚡ Recruiter Fast-Track</div>
+            <h2 class="text-2xl font-heading font-bold text-white">Why Hire Aadhilshah?</h2>
+          </div>
+          <a href="contact.html" class="text-xs font-mono text-emerald-400 hover:underline flex items-center gap-1">
+            Connect for Immediate Hire →
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- Card 1 -->
+          <div class="glass-panel p-5 rounded-2xl glass-panel-hover">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-4">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading font-bold text-base text-white mb-1.5">Full-Stack + AI Mindset</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">
+              Developed <strong class="text-gray-200">BuildEasy</strong>, combining Node.js, MongoDB, TensorFlow, and Google Maps API to automate supply chain logistics.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="glass-panel p-5 rounded-2xl glass-panel-hover">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading font-bold text-base text-white mb-1.5">B.Tech CSE (2023–2027)</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">
+              ACE College of Engineering Thiruvallam. Solid foundational CS curriculum, <strong class="text-gray-200">CGPA 7.02</strong>, with Corizo ML Certification.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glass-panel p-5 rounded-2xl glass-panel-hover">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading font-bold text-base text-white mb-1.5">Placement Coordinator</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">
+              Direct liaison between companies and 100+ CS students. High-stakes communication, event coordination, and stakeholder management.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="glass-panel p-5 rounded-2xl glass-panel-hover">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-4">
+              <i data-lucide="trophy" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading font-bold text-base text-white mb-1.5">Handball Captain & NSS</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">
+              Captained college handball team, awarded <strong class="text-gray-200">NSS Best Volunteer</strong>, and presented paper at an International Conference.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FLAGSHIP SNEAK PEEK -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden border border-cyan-500/30">
+        <!-- Glow gradient -->
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-cyan-500/10 blur-[90px] rounded-full pointer-events-none"></div>
+
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div class="space-y-4 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              <span>Featured Project • Jan 2026 – Jun 2026</span>
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-heading font-bold text-white">
+              BuildEasy – AI Construction Supply Chain Platform
+            </h2>
+            <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+              Designed and built an intelligent logistics ecosystem using <strong class="text-cyan-400">TensorFlow</strong> for structural material prediction, <strong class="text-emerald-400">Node.js/Express</strong> for high-throughput APIs, and <strong class="text-white">Google Maps API</strong> for dynamic fleet route dispatch.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">Python</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">TensorFlow</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">MobileNetV2</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">Node.js</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">MongoDB</span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-900 border border-slate-700 text-gray-300">Google Maps API</span>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-auto flex flex-col sm:flex-row gap-3">
+            <a href="projects.html" class="px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-bold text-sm shadow-xl shadow-cyan-500/20 hover:scale-105 transition flex items-center justify-center gap-2">
+              <i data-lucide="play-circle" class="w-5 h-5"></i>
+              <span>Launch Live Simulator</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE DEVELOPER CLI TERMINAL -->
+    <section class="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-1">
+          <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+          <span>Interactive Shell</span>
+        </div>
+        <h2 class="text-2xl font-heading font-bold text-white">Dev Console / Quick Queries</h2>
+        <p class="text-xs text-gray-400 mt-1">Recruiters: Type a command or click the shortcuts below to query my background.</p>
+      </div>
+
+      <!-- Quick Command Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-4">
+        <button onclick="runTerminalCommand('hire')" class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition">
+          ⚡ hire
+        </button>
+        <button onclick="runTerminalCommand('skills')" class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/20 transition">
+          💻 skills
+        </button>
+        <button onclick="runTerminalCommand('buildeasy')" class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/20 transition">
+          🏗️ buildeasy
+        </button>
+        <button onclick="runTerminalCommand('leadership')" class="px-3 py-1 rounded-full text-xs font-mono bg-purple-500/10 border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 transition">
+          🏅 leadership
+        </button>
+        <button onclick="runTerminalCommand('assets')" class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/20 transition">
+          🎨 assets
+        </button>
+        <button onclick="runTerminalCommand('contact')" class="px-3 py-1 rounded-full text-xs font-mono bg-slate-800 border border-slate-700 text-gray-300 hover:bg-slate-700 transition">
+          📞 contact
+        </button>
+        <button onclick="runTerminalCommand('clear')" class="px-3 py-1 rounded-full text-xs font-mono bg-slate-800 border border-slate-700 text-gray-400 hover:bg-slate-700 transition">
+          ✕ clear
+        </button>
+      </div>
+
+      <!-- Terminal Window -->
+      <div id="terminal-body" class="terminal-window rounded-2xl overflow-hidden border border-slate-800 cursor-text">
+        <!-- Terminal Header Bar -->
+        <div class="bg-slate-900/90 px-4 py-3 flex items-center justify-between border-b border-slate-800">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            <span class="ml-2 text-xs font-mono text-gray-400">bash - aadhilshah@portfolio: ~</span>
+          </div>
+          <span class="text-[11px] font-mono text-gray-500">v2.4 (Interactive)</span>
+        </div>
+
+        <!-- Terminal Output and Prompt -->
+        <div class="p-4 sm:p-6 font-mono text-xs sm:text-sm">
+          <div id="terminal-output" class="space-y-3 max-h-72 overflow-y-auto pr-2">
+            <div class="text-gray-400">
+              Welcome to Aadhilshah's interactive terminal session. Type <span class="text-cyan-400 font-bold">help</span> or click any tag above to begin.
+            </div>
+          </div>
+
+          <!-- Prompt Line -->
+          <div class="flex items-center gap-2 mt-4 pt-3 border-t border-slate-800/60">
+            <span class="text-emerald-400 font-bold">aadhilshah@portfolio:~$</span>
+            <input 
+              type="text" 
+              id="terminal-input" 
+              class="flex-1 bg-transparent border-none outline-none text-cyan-300 font-mono text-xs sm:text-sm focus:ring-0" 
+              placeholder="type 'hire', 'skills', or 'help'..." 
+              autocomplete="off" 
+              spellcheck="false"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 py-10 mt-16 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div>
+        <div class="font-heading font-bold text-lg text-white">AADHILSHAH S</div>
+        <p class="text-xs text-gray-400 mt-1">Computer Science & Engineering | ACE College of Engineering</p>
+      </div>
+
+      <div class="flex items-center gap-5 text-gray-400">
+        <a href="mailto:aadhilshah.s@gmail.com" class="hover:text-cyan-400 transition" title="Email Aadhilshah">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+        </a>
+        <a href="tel:9633843324" class="hover:text-emerald-400 transition" title="Call Aadhilshah">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+        </a>
+        <button onclick="openWhatsApp()" class="hover:text-emerald-400 transition" title="WhatsApp">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="text-xs text-gray-500 font-mono">
+        © <span id="current-year"></span> Aadhilshah S. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

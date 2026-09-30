@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Received | Aadhilshah S</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080d1a',
+              card: '#0f172a',
+              border: '#1e293b',
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+            }
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-[#080d1a] text-gray-100 min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
+
+  <!-- Navbar -->
+  <header class="border-b border-slate-800/80 bg-[#080d1a]/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-500 flex items-center justify-center font-heading font-black text-slate-950 text-xl">
+          A
+        </div>
+        <span class="font-heading font-bold text-lg text-white">AADHILSHAH S</span>
+      </a>
+      <a href="index.html" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1.5">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Confirmation Card -->
+  <main class="flex-grow flex items-center justify-center px-4 py-16">
+    <div class="max-w-lg w-full glass-panel p-8 sm:p-10 rounded-3xl border border-emerald-500/40 text-center relative overflow-hidden shadow-2xl">
+      <!-- Glow -->
+      <div class="absolute -top-24 -left-24 w-48 h-48 bg-emerald-500/20 blur-[80px] rounded-full pointer-events-none"></div>
+
+      <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mx-auto flex items-center justify-center mb-6">
+        <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+      </div>
+
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-mono mb-3">
+        <span>⚡ Netlify Form Verified</span>
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-heading font-bold text-white mb-3">
+        Message Dispatched Successfully!
+      </h1>
+
+      <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-8">
+        Thank you for getting in touch. Your message has been routed to Aadhilshah's verified email via the <strong class="text-cyan-400">Netlify Form Engine</strong>. You will receive a response within 12–24 hours.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="index.html" class="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-bold text-xs sm:text-sm hover:brightness-110 transition flex items-center justify-center gap-2">
+          <i data-lucide="home" class="w-4 h-4"></i>
+          <span>Return Home</span>
+        </a>
+        <a href="projects.html" class="px-5 py-3 rounded-xl border border-slate-700 bg-slate-900 text-gray-200 text-xs sm:text-sm font-semibold hover:border-cyan-500/50 hover:text-white transition flex items-center justify-center gap-2">
+          <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
+          <span>Explore Projects</span>
+        </a>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-800 text-xs text-gray-400 font-mono">
+        Need urgent discussion? 
+        <button onclick="openWhatsApp('Hi Aadhilshah, I just submitted your contact form and wanted to connect right away!')" class="text-emerald-400 underline font-semibold hover:text-emerald-300 ml-1">
+          Chat on WhatsApp →
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-gray-500 font-mono">
+    © <span id="current-year"></span> Aadhilshah S • Powered by Netlify Hosting & Forms
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
